@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Tutorial</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .is-loading {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #fff;
+        border-bottom-color: #ff3d00;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+
+        color: transparent;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="h-full grid place-items-center">
+    <div id="app">
+      <app-button>Default</app-button>
+      <app-button type="primary">Primary</app-button>
+      <app-button type="secondary">Secondary</app-button>
+      <app-button type="muted">Muted</app-button>
+      <app-button processing="true">Processing</app-button>
+    </div>
+    <script type="module">
+      import App from "./js/components/App.js";
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
