@@ -2,8 +2,8 @@ import AssignmentsList from "./AssignmentsList.js";
 
 export default {
     template: `
-    <assignments-list title="In Progress" :assignments=inProgressAssignments />
-    <assignments-list title="Completed" :assignments=completedAssignments />
+    <assignments-list title="In Progress" :assignments=filters.inProgress />
+    <assignments-list title="Completed" :assignments=filters.completed />
     `,
 
     data() {
@@ -28,12 +28,12 @@ export default {
     },
 
     computed: {
-        inProgressAssignments() {
-            return this.assignments.filter((a) => !a.complete);
-        },
-        completedAssignments() {
-            return this.assignments.filter((a) => a.complete);
-        },
+        filters() {
+            return {
+                inProgress: this.assignments.filter((a) => !a.complete),
+                completed: this.assignments.filter((a) => a.complete),
+            }
+        }
     },
 
     components: {
