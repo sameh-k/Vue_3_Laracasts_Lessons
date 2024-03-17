@@ -1,7 +1,8 @@
 {
   "scripts": {
     "frontend": "npx serve",
-    "fake": "npx json-server --watch db.json -p 3001"
+    "fake": "npx json-server --watch db.json -p 3001",
+    "start": "npm run frontend & npm run fake"
   },
   "devDependencies": {
     "json-server": "^1.0.0-alpha.23"
